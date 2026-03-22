@@ -1962,7 +1962,7 @@ const Index = () => {
           if (tab === 'reports') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'design' });
           else if (tab === 'inputs') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'input' });
           else if (tab === 'modeling') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'modeler' });
-          else if (tab === 'projects') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'generative' });
+          else if (tab === 'projects') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'projects' });
         }}
       />
     </div>
