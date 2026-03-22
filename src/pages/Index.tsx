@@ -53,6 +53,7 @@ import ColumnDesignDetails from "@/components/ColumnDesignDetails";
 import PMDiagramChart from "@/components/PMDiagramChart";
 import ExportPanel from "@/components/ExportPanel";
 import ETABSComparisonTable from "@/components/ETABSComparisonTable";
+import ProjectManager from "@/components/ProjectManager";
 import LevelPlanView from "@/components/LevelPlanView";
 
 const ParamInput = ({ label, value, onChange }: { label: string; value: number; onChange: (v: number) => void }) => (
@@ -1890,7 +1891,18 @@ const Index = () => {
             />
           </TabsContent>
 
-          {/* GENERATIVE / PROJECTS TAB */}
+          {/* PROJECTS TAB */}
+          <TabsContent value="projects" className="flex-1 overflow-hidden mt-0">
+            <ProjectManager
+              currentState={state}
+              onLoadProject={(data) => dispatch({ type: 'LOAD_PROJECT', data })}
+              onNewProject={() => dispatch({ type: 'RESET_TO_DEFAULT' })}
+              storyCount={stories.length}
+              slabCount={slabs.length}
+            />
+          </TabsContent>
+
+          {/* GENERATIVE TAB */}
           <TabsContent value="generative" className="flex-1 overflow-hidden mt-0">
             <GenerativeDesignDashboard
               onApplyOption={(ev: EvaluatedOption) => {
@@ -1950,7 +1962,7 @@ const Index = () => {
           if (tab === 'reports') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'design' });
           else if (tab === 'inputs') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'input' });
           else if (tab === 'modeling') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'modeler' });
-          else if (tab === 'projects') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'generative' });
+          else if (tab === 'projects') dispatch({ type: 'SET_ACTIVE_TAB', tab: 'projects' });
         }}
       />
     </div>

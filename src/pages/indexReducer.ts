@@ -106,7 +106,9 @@ export type AppAction =
   | { type: 'UPDATE_STORY'; storyId: string; updates: Partial<Story> }
   | { type: 'SELECT_STORY'; storyId: string }
   | { type: 'COPY_STORY_ELEMENTS'; fromStoryId: string; toStoryId: string }
-  | { type: 'SET_STORIES'; stories: Story[] };
+  | { type: 'SET_STORIES'; stories: Story[] }
+  | { type: 'LOAD_PROJECT'; data: Partial<AppState> }
+  | { type: 'RESET_TO_DEFAULT' };
 
 const defaultStoryId = 'ST1';
 
@@ -181,6 +183,7 @@ const NON_UNDOABLE_ACTIONS = new Set([
   'OPEN_ELEM_PROPS', 'CLOSE_ELEM_PROPS', 'OPEN_DIAGRAM', 'CLOSE_DIAGRAM',
   'INC_MODEL_VERSION', 'SET_ANALYZED', 'SET_FRAME_RESULTS', 'SET_BOB_CONNECTIONS',
   'UNDO', 'SAVE_SNAPSHOT', 'CLEAR_SAVED_MESSAGE', 'SET_MODE', 'SELECT_STORY',
+  'LOAD_PROJECT', 'RESET_TO_DEFAULT',
 ]);
 
 function coreReducer(state: AppState, action: AppAction): AppState {
@@ -335,6 +338,23 @@ function coreReducer(state: AppState, action: AppAction): AppState {
     }
     case 'SET_STORIES':
       return { ...state, stories: recalcElevations(action.stories), analyzed: false };
+
+    case 'LOAD_PROJECT': {
+      const loaded = action.data;
+      return {
+        ...initialState,
+        ...loaded,
+        analyzed: false,
+        undoStack: [],
+        modalOpen: false,
+        selectedElement: null,
+        elemPropsOpen: false,
+        diagramOpen: false,
+        savedMessage: 'تم تحميل المشروع ✓',
+      };
+    }
+    case 'RESET_TO_DEFAULT':
+      return { ...initialState, undoStack: [], savedMessage: 'تم إنشاء مشروع جديد ✓' };
 
     default:
       return state;
