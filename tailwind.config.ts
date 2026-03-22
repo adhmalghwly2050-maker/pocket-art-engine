@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        engineering: {
+          beam: "hsl(var(--beam))",
+          column: "hsl(var(--column))",
+          slab: "hsl(var(--slab))",
+          safe: "hsl(var(--stress-safe))",
+          warn: "hsl(var(--stress-warn))",
+          danger: "hsl(var(--stress-danger))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
