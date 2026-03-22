@@ -106,7 +106,9 @@ export type AppAction =
   | { type: 'UPDATE_STORY'; storyId: string; updates: Partial<Story> }
   | { type: 'SELECT_STORY'; storyId: string }
   | { type: 'COPY_STORY_ELEMENTS'; fromStoryId: string; toStoryId: string }
-  | { type: 'SET_STORIES'; stories: Story[] };
+  | { type: 'SET_STORIES'; stories: Story[] }
+  | { type: 'LOAD_PROJECT'; data: Partial<AppState> }
+  | { type: 'RESET_TO_DEFAULT' };
 
 const defaultStoryId = 'ST1';
 
