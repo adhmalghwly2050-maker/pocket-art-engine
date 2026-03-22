@@ -1890,7 +1890,18 @@ const Index = () => {
             />
           </TabsContent>
 
-          {/* GENERATIVE / PROJECTS TAB */}
+          {/* PROJECTS TAB */}
+          <TabsContent value="projects" className="flex-1 overflow-hidden mt-0">
+            <ProjectManager
+              currentState={state}
+              onLoadProject={(data) => dispatch({ type: 'LOAD_PROJECT', data })}
+              onNewProject={() => dispatch({ type: 'RESET_TO_DEFAULT' })}
+              storyCount={stories.length}
+              slabCount={slabs.length}
+            />
+          </TabsContent>
+
+          {/* GENERATIVE TAB */}
           <TabsContent value="generative" className="flex-1 overflow-hidden mt-0">
             <GenerativeDesignDashboard
               onApplyOption={(ev: EvaluatedOption) => {
