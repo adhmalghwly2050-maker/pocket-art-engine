@@ -53,6 +53,7 @@ import ColumnDesignDetails from "@/components/ColumnDesignDetails";
 import PMDiagramChart from "@/components/PMDiagramChart";
 import ExportPanel from "@/components/ExportPanel";
 import ETABSComparisonTable from "@/components/ETABSComparisonTable";
+import ProjectManager from "@/components/ProjectManager";
 import LevelPlanView from "@/components/LevelPlanView";
 
 const ParamInput = ({ label, value, onChange }: { label: string; value: number; onChange: (v: number) => void }) => (
