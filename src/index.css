@@ -1,96 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --background: 220 20% 97%;
+    --foreground: 220 30% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 220 30% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
+    --popover-foreground: 220 30% 12%;
+    --primary: 220 60% 20%;
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 215 30% 94%;
+    --secondary-foreground: 220 60% 20%;
+    --muted: 215 25% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 215 80% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
+    --border: 214 25% 88%;
+    --input: 214 25% 88%;
+    --ring: 215 80% 52%;
+    --radius: 0.75rem;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Structural element tokens */
+    --beam: 160 84% 39%;
+    --beam-foreground: 0 0% 100%;
+    --column: 30 80% 50%;
+    --column-foreground: 0 0% 100%;
+    --slab: 215 16% 47%;
+    --slab-fill: 215 16% 47%;
+    --node: 215 80% 52%;
+    --node-selected: 215 80% 52%;
 
-    --radius: 0.5rem;
+    --canvas: 220 20% 97%;
+    --canvas-grid: 215 25% 90%;
+    --canvas-crosshair: 215 16% 47%;
 
-    --sidebar-background: 0 0% 98%;
+    --stress-safe: 160 84% 39%;
+    --stress-warn: 30 80% 50%;
+    --stress-danger: 0 84% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --mode-auto: 160 84% 39%;
+    --mode-manual: 215 80% 52%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* App chrome tokens */
+    --header-bg: 220 60% 18%;
+    --header-fg: 210 40% 98%;
+    --bottom-nav-bg: 0 0% 100%;
+    --bottom-nav-fg: 215 16% 47%;
+    --bottom-nav-active: 220 60% 20%;
+    --section-bg: 215 30% 96%;
+    --badge-engineering: 30 80% 50%;
+    --badge-engineering-fg: 0 0% 100%;
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 18%), hsl(215 80% 35%));
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 215 25% 15%;
+    --sidebar-primary: 222 47% 11%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222 47% 5%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    --card: 222 47% 7%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 47% 7%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+    --header-bg: 222 47% 7%;
+    --header-fg: 210 40% 98%;
+    --bottom-nav-bg: 222 47% 7%;
+    --bottom-nav-fg: 215 20% 65%;
+    --bottom-nav-active: 217 91% 60%;
+    --section-bg: 217 33% 12%;
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -98,8 +110,199 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .font-mono-eng {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* ═══ App Shell ═══ */
+  .app-header {
+    background: var(--gradient-hero);
+    @apply text-primary-foreground px-4 py-3 flex items-center gap-3 shrink-0;
+  }
+  .app-header-title {
+    @apply text-lg font-bold tracking-tight;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .bottom-nav {
+    background: hsl(var(--bottom-nav-bg));
+    @apply fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around py-1.5 border-t border-border;
+    box-shadow: 0 -2px 16px hsl(var(--foreground) / 0.06);
+  }
+  .bottom-nav-item {
+    @apply flex flex-col items-center gap-0.5 py-1 px-3 text-[10px] font-semibold uppercase tracking-wider transition-colors;
+    color: hsl(var(--bottom-nav-fg));
+  }
+  .bottom-nav-item.active {
+    color: hsl(var(--bottom-nav-active));
+  }
+  .bottom-nav-item.active .bottom-nav-icon {
+    @apply bg-accent/10 rounded-lg p-1;
+  }
+
+  /* ═══ Section Cards ═══ */
+  .section-card {
+    background: hsl(var(--card));
+    @apply rounded-2xl border border-border shadow-sm overflow-hidden;
+  }
+  .section-card-header {
+    @apply flex items-center gap-2 px-4 py-3 text-sm font-bold;
+    color: hsl(var(--foreground));
+  }
+  .section-card-content {
+    @apply px-4 pb-4;
+  }
+
+  /* ═══ Engineering Badges ═══ */
+  .badge-engineering {
+    background: hsl(var(--badge-engineering));
+    color: hsl(var(--badge-engineering-fg));
+    @apply inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider;
+  }
+  .badge-critical {
+    @apply bg-destructive text-destructive-foreground inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider;
+  }
+  .badge-grade {
+    @apply bg-primary text-primary-foreground inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider;
+  }
+
+  /* ═══ Data Display ═══ */
+  .metric-card {
+    background: hsl(var(--section-bg));
+    @apply rounded-xl p-4 text-center;
+  }
+  .metric-value {
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-2xl font-bold;
+    color: hsl(var(--foreground));
+  }
+  .metric-unit {
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-sm font-semibold;
+    color: hsl(var(--accent));
+  }
+  .metric-label {
+    @apply text-xs text-muted-foreground mt-1;
+  }
+
+  /* ═══ Input Fields (Engineering Style) ═══ */
+  .eng-input {
+    @apply h-12 text-right font-mono text-base border-2 border-border rounded-xl bg-card px-4;
+    font-family: 'JetBrains Mono', monospace;
+    direction: ltr;
+  }
+  .eng-input:focus {
+    @apply border-accent ring-2 ring-accent/20;
+  }
+  .eng-label {
+    @apply text-sm font-medium text-right block mb-1;
+    direction: rtl;
+  }
+  .eng-unit {
+    @apply text-xs text-muted-foreground;
+  }
+
+  /* ═══ Blueprint Preview ═══ */
+  .blueprint-preview {
+    background: linear-gradient(135deg, hsl(215 30% 94%), hsl(220 25% 90%));
+    @apply rounded-2xl overflow-hidden relative;
+  }
+  .blueprint-watermark {
+    @apply absolute inset-0 flex items-center justify-center text-4xl font-black opacity-5 rotate-[-15deg];
+    color: hsl(var(--primary));
+    letter-spacing: 0.2em;
+  }
+
+  /* ═══ Structural Canvas ═══ */
+  .tool-button {
+    @apply flex items-center gap-2 px-3 py-2 text-sm rounded-xl transition-all;
+    @apply text-foreground;
+    @apply border border-transparent;
+  }
+  .tool-button:hover {
+    @apply bg-accent/10;
+  }
+  .tool-button-active {
+    @apply bg-accent text-accent-foreground border-accent shadow-md;
+  }
+  .canvas-container {
+    background: hsl(var(--canvas));
+    @apply relative overflow-hidden;
+    cursor: crosshair;
+  }
+  .property-label {
+    @apply text-xs font-medium text-muted-foreground uppercase tracking-wider block;
+  }
+  .property-value {
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-sm text-foreground;
+  }
+  .mode-badge-auto {
+    @apply inline-flex items-center justify-center px-3 py-1 rounded-lg text-xs font-semibold;
+    background: hsl(var(--mode-auto));
+    color: white;
+  }
+  .mode-badge-manual {
+    @apply inline-flex items-center justify-center px-3 py-1 rounded-lg text-xs font-semibold;
+    background: hsl(var(--mode-manual));
+    color: white;
+  }
+  .element-beam {
+    stroke: hsl(var(--beam));
+  }
+  .element-column {
+    fill: hsl(var(--column));
+  }
+  .element-node {
+    fill: hsl(var(--node));
+  }
+  .element-slab {
+    fill: hsl(var(--slab-fill) / 0.1);
+    stroke: hsl(var(--slab));
+  }
+
+  /* ═══ Hero Banner ═══ */
+  .hero-banner {
+    background: var(--gradient-hero);
+    @apply text-primary-foreground px-5 py-6 rounded-b-3xl;
+  }
+  .hero-title {
+    @apply text-2xl font-extrabold leading-tight;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .hero-subtitle {
+    @apply text-sm opacity-80 mt-1 leading-relaxed;
+  }
+
+  /* ═══ Action Buttons ═══ */
+  .btn-primary-action {
+    @apply w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    @apply shadow-lg;
+  }
+  .btn-primary-action:hover {
+    @apply opacity-90;
+  }
+  .btn-secondary-action {
+    @apply w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 border-2 border-border bg-card;
+    color: hsl(var(--foreground));
+  }
+
+  /* ═══ Structural Visualizer ═══ */
+  .struct-preview {
+    background: linear-gradient(180deg, hsl(220 60% 18%), hsl(215 50% 25%));
+    @apply rounded-2xl p-4 text-primary-foreground;
+  }
+
+  /* ═══ Page Content ═══ */
+  .page-content {
+    @apply flex-1 overflow-y-auto pb-20;
   }
 }
