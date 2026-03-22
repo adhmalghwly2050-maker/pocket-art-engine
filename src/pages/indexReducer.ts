@@ -339,6 +339,23 @@ function coreReducer(state: AppState, action: AppAction): AppState {
     case 'SET_STORIES':
       return { ...state, stories: recalcElevations(action.stories), analyzed: false };
 
+    case 'LOAD_PROJECT': {
+      const loaded = action.data;
+      return {
+        ...initialState,
+        ...loaded,
+        analyzed: false,
+        undoStack: [],
+        modalOpen: false,
+        selectedElement: null,
+        elemPropsOpen: false,
+        diagramOpen: false,
+        savedMessage: 'تم تحميل المشروع ✓',
+      };
+    }
+    case 'RESET_TO_DEFAULT':
+      return { ...initialState, undoStack: [], savedMessage: 'تم إنشاء مشروع جديد ✓' };
+
     default:
       return state;
   }
