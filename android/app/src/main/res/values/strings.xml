@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ELAP</string>
+    <string name="title_activity_main">ELAP</string>
+    <string name="package_name">com.elap.app</string>
+    <string name="custom_url_scheme">com.elap.app</string>
+</resources>
